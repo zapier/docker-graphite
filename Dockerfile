@@ -10,7 +10,7 @@ ADD ./supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 ADD ./carbon.conf /var/lib/graphite/conf/carbon.conf
 
-VOLUME /var/lib/graphite/storage
+VOLUME /var/lib/graphite/storage/whisper
 RUN cd /var/lib/graphite/webapp/graphite && python manage.py syncdb --noinput
 
 ADD local_settings.py.template /local_settings.py.template
